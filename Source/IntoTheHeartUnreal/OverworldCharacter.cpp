@@ -8,7 +8,6 @@ AOverworldCharacter::AOverworldCharacter()
 {
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-
 }
 
 // Called when the game starts or when spawned
@@ -23,6 +22,10 @@ void AOverworldCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	if (GetVelocity().SquaredLength() != 0)
+		GetWorld()->GetFirstPlayerController()->PlayerCameraManager->StartCameraShake(ShakeProfile);
+	else
+		GetWorld()->GetFirstPlayerController()->PlayerCameraManager->StopAllCameraShakes(false);
 }
 
 // Called to bind functionality to input

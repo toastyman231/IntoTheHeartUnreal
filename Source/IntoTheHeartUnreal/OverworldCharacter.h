@@ -3,8 +3,8 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "LegacyCameraShake.h"
 #include "GameFramework/Character.h"
-#include "Camera/CameraComponent.h"
 #include "OverworldCharacter.generated.h"
 
 UCLASS()
@@ -27,6 +27,10 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+public:
+	UPROPERTY(EditAnywhere)
+		TSubclassOf<UCameraShakeBase> ShakeProfile;
+
 private:
 	void MoveFB(float Value);
 	void MoveLR(float Value);
@@ -39,8 +43,4 @@ private:
 
 	UPROPERTY(EditAnywhere)
 		float RotationSpeed = 1.0f;
-
-	UPROPERTY(EditDefaultsOnly)
-		UCameraComponent* PlayerCamera;
-
 };
