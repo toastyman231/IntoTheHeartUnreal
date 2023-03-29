@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "LegacyCameraShake.h"
 #include "GameFramework/Character.h"
+#include "EnhancedInputComponent.h"
 #include "OverworldCharacter.generated.h"
 
 UCLASS()
@@ -30,6 +31,9 @@ public:
 public:
 	UPROPERTY(EditAnywhere)
 		TSubclassOf<UCameraShakeBase> ShakeProfile;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		float Scale = 1.0f;
 
 private:
 	void MoveFB(float Value);

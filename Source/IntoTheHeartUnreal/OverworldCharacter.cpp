@@ -41,21 +41,21 @@ void AOverworldCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInput
 
 void AOverworldCharacter::MoveFB(float Value)
 {
-	AddMovementInput(GetActorForwardVector(), Value * MoveSpeed);
+	AddMovementInput(GetActorForwardVector(), Value * MoveSpeed * Scale);
 }
 
 void AOverworldCharacter::MoveLR(float Value)
 {
-	AddMovementInput(-GetActorRightVector(), Value * MoveSpeed);
+	AddMovementInput(-GetActorRightVector(), Value * MoveSpeed * Scale);
 }
 
 void AOverworldCharacter::RotateYaw(float Value)
 {
-	AddControllerYawInput(Value * RotationSpeed);
+	AddControllerYawInput(Value * RotationSpeed * Scale);
 }
 
 void AOverworldCharacter::RotatePitch(float Value)
 {
-	AddControllerPitchInput(Value * RotationSpeed);
+	AddControllerPitchInput(Value * RotationSpeed * Scale);
 }
 
