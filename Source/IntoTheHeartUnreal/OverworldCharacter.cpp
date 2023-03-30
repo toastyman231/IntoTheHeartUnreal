@@ -35,8 +35,8 @@ void AOverworldCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInput
 
 	PlayerInputComponent->BindAxis(TEXT("MoveFB"), this, &AOverworldCharacter::MoveFB);
 	PlayerInputComponent->BindAxis(TEXT("MoveLR"), this, &AOverworldCharacter::MoveLR);
-	PlayerInputComponent->BindAxis(TEXT("RotateYaw"), this, &AOverworldCharacter::RotateYaw);
-	PlayerInputComponent->BindAxis(TEXT("RotatePitch"), this, &AOverworldCharacter::RotatePitch);
+	PlayerInputComponent->BindAxis(TEXT("MouseX"), this, &AOverworldCharacter::RotateYaw);
+	PlayerInputComponent->BindAxis(TEXT("MouseY"), this, &AOverworldCharacter::RotatePitch);
 }
 
 void AOverworldCharacter::MoveFB(float Value)
