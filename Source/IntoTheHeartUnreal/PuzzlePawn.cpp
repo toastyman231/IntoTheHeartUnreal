@@ -29,6 +29,8 @@ APuzzlePawn::APuzzlePawn()
 void APuzzlePawn::BeginPlay()
 {
 	Super::BeginPlay();
+
+	CanRotate = true;
 }
 
 void APuzzlePawn::Tick(float DeltaTime)
@@ -47,6 +49,8 @@ void APuzzlePawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponen
 
 void APuzzlePawn::OnMouseDragX(float AxisValue)
 {
+	if (!CanRotate) return;
+
 	if (APlayerController* PlayerController = Cast<APlayerController>(GetController()))
 	{
 		if (PlayerController->IsInputKeyDown(EKeys::LeftMouseButton))
@@ -66,6 +70,8 @@ void APuzzlePawn::OnMouseDragX(float AxisValue)
 
 void APuzzlePawn::OnMouseDragY(float AxisValue)
 {
+	if (!CanRotate) return;
+
 	if (APlayerController* PlayerController = Cast<APlayerController>(GetController()))
 	{
 		if (PlayerController->IsInputKeyDown(EKeys::LeftMouseButton))
