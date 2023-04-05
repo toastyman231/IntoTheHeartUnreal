@@ -32,6 +32,7 @@ void APortal::OverlapBegin(UPrimitiveComponent* OverlappedComponent, AActor* Oth
 {
 	if (AOverworldCharacter* Player = Cast<AOverworldCharacter>(OtherActor))
 	{
+		Player->Scale = 0.f;
 		SequenceActor->SequencePlayer->Play();
 	}
 }
