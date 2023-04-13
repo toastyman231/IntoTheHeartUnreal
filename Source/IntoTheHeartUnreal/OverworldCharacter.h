@@ -28,6 +28,9 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+		void LoseGame(const FString& Message = FString(TEXT("They saw you.")));
+
 public:
 	UPROPERTY(EditAnywhere)
 		TSubclassOf<UCameraShakeBase> ShakeProfile;

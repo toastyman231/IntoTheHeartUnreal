@@ -3,6 +3,8 @@
 
 #include "OverworldCharacter.h"
 
+#include "Blueprint/UserWidget.h"
+
 // Sets default values
 AOverworldCharacter::AOverworldCharacter()
 {
