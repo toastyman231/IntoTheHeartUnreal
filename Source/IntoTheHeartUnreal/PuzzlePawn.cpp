@@ -29,10 +29,9 @@ APuzzlePawn::APuzzlePawn()
 void APuzzlePawn::BeginPlay()
 {
 	Super::BeginPlay();
-	// Add a random initial offset
-	/*OnMouseDragX(FMath::RandRange(0, 180));
-	OnMouseDragY(FMath::RandRange(0, 180));*/
-	SpringArm->SetWorldRotation(FRotator(FMath::RandRange(0, 180), 0, FMath::RandRange(0, 180)));
+
+	SpringArm->SetWorldRotation(FRotator(FMath::RandRange(0, 180), FMath::RandRange(0, 180), 0));
+	SpringArm->SetWorldRotation(FRotator(SpringArm->GetComponentRotation().Pitch, SpringArm->GetComponentRotation().Yaw, 0));
 	CanRotate = true;
 }
 
